@@ -1,0 +1,24 @@
+I:\Proyectos\C#\Equipo_App\EquipoApp\bin\Debug\EquipoApp.exe.config
+I:\Proyectos\C#\Equipo_App\EquipoApp\bin\Debug\EquipoApp.exe
+I:\Proyectos\C#\Equipo_App\EquipoApp\bin\Debug\EquipoApp.pdb
+I:\Proyectos\C#\Equipo_App\EquipoApp\obj\Debug\EquipoApp.csproj.AssemblyReference.cache
+I:\Proyectos\C#\Equipo_App\EquipoApp\obj\Debug\EquipoApp.Properties.Resources.resources
+I:\Proyectos\C#\Equipo_App\EquipoApp\obj\Debug\EquipoApp.csproj.GenerateResource.cache
+I:\Proyectos\C#\Equipo_App\EquipoApp\obj\Debug\EquipoApp.csproj.CoreCompileInputs.cache
+I:\Proyectos\C#\Equipo_App\EquipoApp\obj\Debug\EquipoApp.exe
+I:\Proyectos\C#\Equipo_App\EquipoApp\obj\Debug\EquipoApp.pdb
+I:\Proyectos\C#\Proyexto Entregable\Equipo_App\EquipoApp\bin\Debug\EquipoApp.exe.config
+I:\Proyectos\C#\Proyexto Entregable\Equipo_App\EquipoApp\bin\Debug\EquipoApp.exe
+I:\Proyectos\C#\Proyexto Entregable\Equipo_App\EquipoApp\bin\Debug\EquipoApp.pdb
+I:\Proyectos\C#\Proyexto Entregable\Equipo_App\EquipoApp\obj\Debug\EquipoApp.csproj.AssemblyReference.cache
+I:\Proyectos\C#\Proyexto Entregable\Equipo_App\EquipoApp\obj\Debug\EquipoApp.FrmAltaPersona.resources
+I:\Proyectos\C#\Proyexto Entregable\Equipo_App\EquipoApp\obj\Debug\EquipoApp.FrmPrincipal.resources
+I:\Proyectos\C#\Proyexto Entregable\Equipo_App\EquipoApp\obj\Debug\EquipoApp.Properties.Resources.resources
+I:\Proyectos\C#\Proyexto Entregable\Equipo_App\EquipoApp\obj\Debug\EquipoApp.csproj.GenerateResource.cache
+I:\Proyectos\C#\Proyexto Entregable\Equipo_App\EquipoApp\obj\Debug\EquipoApp.csproj.CoreCompileInputs.cache
+I:\Proyectos\C#\Proyexto Entregable\Equipo_App\EquipoApp\obj\Debug\EquipoApp.exe
+I:\Proyectos\C#\Proyexto Entregable\Equipo_App\EquipoApp\obj\Debug\EquipoApp.pdb
+I:\Proyectos\C#\Proyexto Entregable\Equipo_App\EquipoApp\obj\Debug\EquipoApp.FrmAltaJugador.resources
+I:\Proyectos\C#\Proyexto Entregable\Equipo_App\EquipoApp\obj\Debug\EquipoApp.FrmListarJugadores.resources
+I:\Proyectos\C#\Proyexto Entregable\Equipo_App\EquipoApp\obj\Debug\EquipoApp.FrmListarPersonas.resources
+I:\Proyectos\C#\Proyexto Entregable\Equipo_App\EquipoApp\obj\Debug\EquipoApp.FrmAltaEquipo.resources
