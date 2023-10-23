@@ -117,7 +117,12 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="cadenaConexionPc" xml:space="preserve">
+  <data name="cadenaConexionPcCa" xml:space="preserve">
     <value>Data Source=DESKTOP-6KIGGOG\MSSQLSERVER01;Initial Catalog=EQUIPOS_FUTBOL;Integrated Security=True</value>
+    <comment>Cambiar el nombre de cadena a cadenaConexionPcCasa//Esta es pc escritorio</comment>
+  </data>
+  <data name="cadenaConexionPcCasa" xml:space="preserve">
+    <value>Data Source=LAPTOP-E09L8OSG;Initial Catalog=EQUIPOS_FUTBOL;Integrated Security=True</value>
+    <comment>Cambiar el nombre de cadena a cadenaConexionPcCasa//Esta es notebook</comment>
   </data>
 </root>

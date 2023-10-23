@@ -112,7 +112,7 @@
             // nuevoEquipoToolStripMenuItem
             // 
             this.nuevoEquipoToolStripMenuItem.Name = "nuevoEquipoToolStripMenuItem";
-            this.nuevoEquipoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.nuevoEquipoToolStripMenuItem.Size = new System.Drawing.Size(149, 22);
             this.nuevoEquipoToolStripMenuItem.Text = "Nuevo Equipo";
             this.nuevoEquipoToolStripMenuItem.Click += new System.EventHandler(this.nuevoEquipoToolStripMenuItem_Click);
             // 

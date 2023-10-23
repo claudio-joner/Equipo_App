@@ -19,7 +19,7 @@ namespace EquipoApp
         public FrmListarJugadores()
         {
             InitializeComponent();
-            conexion = new SqlConnection(Properties.Resources.cadenaConexionPc);
+            conexion = new SqlConnection(Properties.Resources.cadenaConexionPcCasa);
             comando = new SqlCommand();
         }
 

@@ -20,7 +20,7 @@ namespace EquipoApp
         public FrmAltaJugador()
         {
             InitializeComponent();
-            conexion = new SqlConnection(Properties.Resources.cadenaConexionPc);
+            conexion = new SqlConnection(Properties.Resources.cadenaConexionPcCasa);
             comando = new SqlCommand();
             //Creamos un jugador
             Jugador jugador = new Jugador();

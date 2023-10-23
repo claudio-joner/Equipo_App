@@ -63,9 +63,18 @@ namespace EquipoApp.Properties {
         /// <summary>
         ///   Busca una cadena traducida similar a Data Source=DESKTOP-6KIGGOG\MSSQLSERVER01;Initial Catalog=EQUIPOS_FUTBOL;Integrated Security=True.
         /// </summary>
-        internal static string cadenaConexionPc {
+        internal static string cadenaConexionPcCa {
             get {
-                return ResourceManager.GetString("cadenaConexionPc", resourceCulture);
+                return ResourceManager.GetString("cadenaConexionPcCa", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Data Source=LAPTOP-E09L8OSG;Initial Catalog=EQUIPOS_FUTBOL;Integrated Security=True.
+        /// </summary>
+        internal static string cadenaConexionPcCasa {
+            get {
+                return ResourceManager.GetString("cadenaConexionPcCasa", resourceCulture);
             }
         }
     }
