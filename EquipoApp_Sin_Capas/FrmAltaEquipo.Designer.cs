@@ -89,6 +89,7 @@
             this.cboDt.Name = "cboDt";
             this.cboDt.Size = new System.Drawing.Size(214, 21);
             this.cboDt.TabIndex = 1;
+            this.cboDt.SelectedIndexChanged += new System.EventHandler(this.cboDt_SelectedIndexChanged);
             // 
             // dgvJugadores
             // 

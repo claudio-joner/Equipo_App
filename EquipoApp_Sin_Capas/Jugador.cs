@@ -11,6 +11,15 @@ namespace EquipoApp
 		private Persona oPersona;
 		private int nroCamiseta;
 		private Posicion posicion;
+		private int id;
+
+		public int Id
+		{
+			get { return id; }
+			set { id = value; }
+		}
+
+
 
 		public Posicion Posicion
 		{
@@ -37,8 +46,9 @@ namespace EquipoApp
 			Posicion = new Posicion();
         }
 
-        public Jugador(Persona oPers,int nro, Posicion oPos)
+        public Jugador(Persona oPers,int nro, Posicion oPos, int id)
         {
+			Id = id;
 			Persona = oPers;
 			NroCamiseta = nro;
 			Posicion = oPos;

@@ -105,15 +105,16 @@ END
 
 GO 
 
-CREATE PROCEDURE SP_PARAM_JUGADOR --VOY A USARLO PARA CREAR LOS JUGADORES Y PERSONAS OBTENFGO LOS PARAMETROS DE SALIDA
+CREATE  PROCEDURE SP_PARAM_JUGADOR --VOY A USARLO PARA CREAR LOS JUGADORES Y PERSONAS OBTENFGO LOS PARAMETROS DE SALIDA
 @nomJugador varchar(100),
 @nomPosicion varchar(100), 
 @nro int,
 @fecha_nac DATE OUTPUT,
-@dni int OUTPUT
+@dni int OUTPUT,
+@id int OUTPUT
 AS
 BEGIN
-select  @dni = p.DNI , @fecha_nac = p.FECHA_NACIMIENTO from JUGADORES j
+select  @dni = p.DNI , @fecha_nac = p.FECHA_NACIMIENTO,@id = j.ID from JUGADORES j
 JOIN PERSONAS p ON j.PERSONA = p.ID
 JOIN POSICIONES po ON j.POSICION = po.ID
 WHERE (p.NOMBRE like CONCAT('%',@nomJugador,'%')) and 
@@ -122,13 +123,60 @@ WHERE (p.NOMBRE like CONCAT('%',@nomJugador,'%')) and
 END
 
 GO
+
 -- Ejecuta el procedimiento almacenado y asigna los resultados a variables de salida
-DECLARE @fecha_nac DATE, @dni INT;
-EXEC SP_PARAM_JUGADOR 'Kroos', 'Delantero', 3, @fecha_nac OUTPUT, @dni OUTPUT;
+--DECLARE @fecha_nac DATE, @dni INT,@id INT;
+--EXEC SP_PARAM_JUGADOR 'Kroos', 'Delantero', 3, @fecha_nac OUTPUT, @dni OUTPUT, @id OUTPUT;
 
--- Muestra las variables de salida
-SELECT @fecha_nac AS FechaNacimiento, @dni AS DNI;
+---- Muestra las variables de salida
+--SELECT @fecha_nac AS FechaNacimiento, @dni AS DNI, @id AS ID;
 
+
+CREATE PROCEDURE SP_CONSULTAR_EQUIPO
+@nomEquipo varchar(100),
+@nomDt varchar(100),
+@ReturnValue int OUTPUT
+AS
+BEGIN
+	IF EXISTS  (SELECT distinct e.NOMBRE 
+				FROM EQUIPOS e 
+				WHERE e.NOMBRE like CONCAT('%',@nomEquipo,'%') AND e.DIRECTOR_TECNICO like CONCAT('%',@nomDt,'%'))
+	BEGIN
+		SET  @ReturnValue = 1;
+	END
+	ELSE
+	BEGIN
+		SET @ReturnValue = 0; 
+	END
+END	
+
+--DECLARE @ReturnValue INT;
+--EXEC @ReturnValue = SP_CONSULTAR_EQUIPO 'NombreDelEquipo', 'NOM',@ReturnValue;
+--select @ReturnValue
+
+CREATE PROCEDURE SP_INSERTAR_EQUIPO
+@nomEquipo varchar(100),
+@nomDt varchar(100),
+@id int OUTPUT
+AS
+BEGIN
+ INSERT INTO EQUIPOS(NOMBRE,DIRECTOR_TECNICO)
+ VALUES (@nomEquipo,@nomDt);
+ SET @id = SCOPE_IDENTITY();
+END
+
+CREATE PROCEDURE SP_INSERTAR_DETALLES
+@idEquipo int,
+@idJugador int
+AS
+BEGIN
+ INSERT INTO EQUIPOS_JUGADORES(EQUIPO,JUGADOR)
+ VALUES (@idEquipo,@idJugador);
+END
+
+select * from EQUIPOS_JUGADORES
+
+select * from EQUIPOS
 
 select * from POSICIONES -- 1 a 11 
 select * from personas --1 a 38 

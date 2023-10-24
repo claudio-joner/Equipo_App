@@ -21,7 +21,7 @@ namespace EquipoApp
         {
             InitializeComponent();
             nuevaPersona = new Persona();
-            conexion = new SqlConnection();
+            conexion = new SqlConnection(Properties.Resources.cadenaConexionPcCasa);
             comando = new SqlCommand();
         }
 
@@ -145,7 +145,7 @@ namespace EquipoApp
 
         private void AbrirConexion()
         {
-            conexion.ConnectionString = Properties.Resources.cadenaConexionPcCa;//Tambien se puede colocar en el constructor.
+            conexion.ConnectionString = Properties.Resources.cadenaConexionPcCasa;//Tambien se puede colocar en el constructor.
             conexion.Open();
         }
     }

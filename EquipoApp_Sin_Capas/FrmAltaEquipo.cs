@@ -43,7 +43,7 @@ namespace EquipoApp
         {
             AbrirConexion();
             CargarComboDt();
-            CargarDgv();
+            //CargarDgv();
             CerrarConexion();
             Limpiar();
         }
@@ -54,10 +54,10 @@ namespace EquipoApp
             cmd.Connection = connection;
             cmd.CommandText = "SP_LISTAR_JUGADORES";
             cmd.CommandType = CommandType.StoredProcedure;
-            
-            tablaJugador.Load(cmd.ExecuteReader());
+            cmd.Parameters.Clear();
+            SqlDataReader reader = cmd.ExecuteReader();
 
-            
+            tablaJugador.Load(reader);
 
             foreach (DataRow item in tablaJugador.Rows)
             {
@@ -67,6 +67,8 @@ namespace EquipoApp
             }
         }
 
+        
+
         private void CargarComboDt()
         {
             DataTable tablaDt = new DataTable();
@@ -74,6 +76,7 @@ namespace EquipoApp
             cmd.Connection = connection;
             cmd.CommandText = "SP_LISTAR_PERSONAS";
             cmd.CommandType = CommandType.StoredProcedure;
+
             tablaDt.Load(cmd.ExecuteReader());
             
             cboDt.DataSource = tablaDt;
@@ -107,8 +110,8 @@ namespace EquipoApp
             txtNombreEquipo.Focus();
             cboDt.SelectedIndex = 0;
             lstConvocados.Items.Clear();
-            AbrirConexion();
             dgvJugadores.Rows.Clear();
+            AbrirConexion();
             CargarDgv();
             CerrarConexion();
         }
@@ -124,6 +127,10 @@ namespace EquipoApp
                 string numero = dgvJugadores.Rows[dgvJugadores.CurrentRow.Index].Cells[1].Value.ToString();
                 string posicion = dgvJugadores.Rows[dgvJugadores.CurrentRow.Index].Cells[2].Value.ToString();
                 string jugador = "Nombre: " + nombre + " |Numero: " + numero+" |Posicion: " + posicion;
+
+                //Eliminar el jugador del dgv cuando selecciono una persona del cboDt
+                string nombreDt = cboDt.DisplayMember.ToString();
+
 
 
                 if (ValidarJugador(lNombres,nombre))
@@ -154,15 +161,19 @@ namespace EquipoApp
                     SqlParameter dni = new SqlParameter("@dni",SqlDbType.Int);
                     dni.Direction = ParameterDirection.Output;
                     cmd.Parameters.Add(dni);
-                    SqlParameter fecha = new SqlParameter("fecha_nac", SqlDbType.DateTime);
+                    SqlParameter fecha = new SqlParameter("@fecha_nac", SqlDbType.DateTime);
                     fecha.Direction = ParameterDirection.Output;
                     cmd.Parameters.Add(fecha);
+                    SqlParameter id = new SqlParameter("@id", SqlDbType.Int);
+                    id.Direction = ParameterDirection.Output;
+                    cmd.Parameters.Add(id);
 
                     cmd.ExecuteReader();
 
-                    //Obtendo los parametros de salida
+                    //Obtendo los parametros de salida y se convierte al tipo correspondiente
                     DateTime fecha_nac = Convert.ToDateTime(fecha.Value);
                     int dniJugador = Convert.ToInt32(dni.Value);
+                    int idJugador = Convert.ToInt32(id.Value);   
 
                     CerrarConexion();
 
@@ -173,7 +184,7 @@ namespace EquipoApp
                     oPersona = new Persona(nombre, dniJugador, fecha_nac);
 
                     //CREO el Jugador 
-                    oJugador = new Jugador(oPersona, nro_jugador, oPosicion);
+                    oJugador = new Jugador(oPersona, nro_jugador, oPosicion,idJugador);
 
                     lJugadores.Add(oJugador);
                 }
@@ -197,19 +208,102 @@ namespace EquipoApp
 
         private void btnCrearEquipo_Click(object sender, EventArgs e)
         {
+            //Obtengo Datos para crear el equipo 
+
+            string nombreEquipo = txtNombreEquipo.Text;
+            string nombreDt = cboDt.Text;//ver
+            Equipo equipo = new Equipo();
+
             
             //CREAR EL EQUIO
-            if (ValidarEquipo(txtNombreEquipo.Text))
+            if (ValidarEquipo(nombreEquipo,nombreDt))
             {
+                AbrirConexion();
+                cmd.Connection = connection;
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandText = "SP_INSERTAR_EQUIPO";
+                cmd.Parameters.Clear();
+                //Agrego parametros de entrada
+                cmd.Parameters.AddWithValue("@nomEquipo",nombreEquipo);
+                cmd.Parameters.AddWithValue("@nomDt",nombreDt);
 
+                //agrego parametros de salida 
+                SqlParameter idEquipo = new SqlParameter("@id", SqlDbType.Int);
+                idEquipo.Direction = ParameterDirection.Output;
+                cmd.Parameters.Add(idEquipo);
+
+                cmd.ExecuteNonQuery();
+
+                int idEquiDet = Convert.ToInt32(idEquipo.Value);
+                cmd.Parameters.Clear();
+
+                //Vamos a EJECUTAR EL SP PARA DETALLES  
+                cmd.CommandText = "SP_INSERTAR_DETALLES";
+
+                foreach (Jugador j in lJugadores)
+                {
+                    cmd.Parameters.AddWithValue("@idEquipo",idEquiDet);
+                    cmd.Parameters.AddWithValue("@idJugador",j.Id);
+                    //equipo.AgregarJugado(j);
+                    cmd.ExecuteNonQuery();
+                }
+                cmd.Parameters.Clear();
+                CerrarConexion();
+
+                MessageBox.Show("Equipo agregado con exito ");
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("El equipo existe");
+                return;
             }
 
 
         }
 
-        private bool ValidarEquipo(string text)
+        private bool ValidarEquipo(string text1, string text2)
         {
-            throw new NotImplementedException();
+            AbrirConexion();
+            cmd.Connection = connection;
+            cmd.CommandText= "SP_CONSULTAR_EQUIPO";
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.Clear();
+            cmd.Parameters.AddWithValue("@nomEquipo", text1);
+            cmd.Parameters.AddWithValue("@nomDt", text2);
+            
+            //PArametro de retorno sin daclarar
+            SqlParameter parametroRetorno = new SqlParameter("@ReturnValue",SqlDbType.Int);
+            parametroRetorno.Direction = ParameterDirection.Output;
+            parametroRetorno.SqlDbType = SqlDbType.Int; 
+            cmd.Parameters.Add(parametroRetorno);
+            cmd.ExecuteNonQuery();
+            
+            CerrarConexion();
+
+            int valor = Convert.ToInt32(parametroRetorno.Value);
+            if (valor == 0)
+                return true;
+            else
+                return false;
+            
+        }
+
+        private void cboDt_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string nombreDt = cboDt.Text;
+
+            foreach (DataGridViewRow fila in dgvJugadores.Rows)
+            {
+                if (fila.Cells["ColNombre"].Value.ToString() == nombreDt)
+                {
+                    dgvJugadores.Rows.Remove(fila);
+                    dgvJugadores.Refresh();
+                }
+                
+            }
+
+            
         }
     }
 }

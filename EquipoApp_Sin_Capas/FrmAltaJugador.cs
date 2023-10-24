@@ -134,20 +134,9 @@ namespace EquipoApp
                 MessageBox.Show("Debe ingresar un numero de camiseta.", "Importante", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return false;
             }
-            //if (ConsultarJugador())
-            //{
-            //    MessageBox.Show("Este jugador ya existe.", "Importante", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            //    return false;
-            //}
+        
             return true;
         }
 
-        //private bool ConsultarJugador()
-        //{
-        //    AbrirConexion();
-        //    comando.Connection = conexion;
-        //    comando.CommandText = "";
-        //    CerrarConexion();
-        //}
     }
 }
