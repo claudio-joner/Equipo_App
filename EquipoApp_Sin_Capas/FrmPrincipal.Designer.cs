@@ -39,6 +39,10 @@
             this.nuevoEquipoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dgvEquipos = new System.Windows.Forms.DataGridView();
             this.lblTitulo = new System.Windows.Forms.Label();
+            this.ColID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColEquipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColDt = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColAccion = new System.Windows.Forms.DataGridViewButtonColumn();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEquipos)).BeginInit();
             this.SuspendLayout();
@@ -51,7 +55,7 @@
             this.equipoToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(755, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(665, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -118,28 +122,69 @@
             // 
             // dgvEquipos
             // 
+            this.dgvEquipos.AllowUserToAddRows = false;
+            this.dgvEquipos.AllowUserToDeleteRows = false;
+            this.dgvEquipos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvEquipos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvEquipos.Location = new System.Drawing.Point(49, 83);
+            this.dgvEquipos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ColID,
+            this.ColEquipo,
+            this.ColDt,
+            this.ColAccion});
+            this.dgvEquipos.Location = new System.Drawing.Point(35, 83);
             this.dgvEquipos.Name = "dgvEquipos";
-            this.dgvEquipos.Size = new System.Drawing.Size(673, 273);
+            this.dgvEquipos.ReadOnly = true;
+            this.dgvEquipos.Size = new System.Drawing.Size(607, 246);
             this.dgvEquipos.TabIndex = 1;
             // 
             // lblTitulo
             // 
             this.lblTitulo.AutoSize = true;
             this.lblTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitulo.Location = new System.Drawing.Point(319, 38);
+            this.lblTitulo.Location = new System.Drawing.Point(272, 38);
             this.lblTitulo.Name = "lblTitulo";
             this.lblTitulo.Size = new System.Drawing.Size(112, 31);
             this.lblTitulo.TabIndex = 2;
             this.lblTitulo.Text = "Equipos";
             this.lblTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // ColID
+            // 
+            this.ColID.HeaderText = "Id";
+            this.ColID.Name = "ColID";
+            this.ColID.ReadOnly = true;
+            this.ColID.Visible = false;
+            // 
+            // ColEquipo
+            // 
+            this.ColEquipo.FillWeight = 93.62888F;
+            this.ColEquipo.HeaderText = "Equipo";
+            this.ColEquipo.Name = "ColEquipo";
+            this.ColEquipo.ReadOnly = true;
+            // 
+            // ColDt
+            // 
+            this.ColDt.FillWeight = 160.6859F;
+            this.ColDt.HeaderText = "Director Tecnico";
+            this.ColDt.Name = "ColDt";
+            this.ColDt.ReadOnly = true;
+            // 
+            // ColAccion
+            // 
+            this.ColAccion.FillWeight = 45.68528F;
+            this.ColAccion.HeaderText = "Editar";
+            this.ColAccion.Name = "ColAccion";
+            this.ColAccion.ReadOnly = true;
+            this.ColAccion.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.ColAccion.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.ColAccion.Text = "Editar";
+            this.ColAccion.UseColumnTextForButtonValue = true;
+            // 
             // FrmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(755, 391);
+            this.ClientSize = new System.Drawing.Size(665, 391);
             this.Controls.Add(this.lblTitulo);
             this.Controls.Add(this.dgvEquipos);
             this.Controls.Add(this.menuStrip1);
@@ -168,6 +213,10 @@
         private System.Windows.Forms.Label lblTitulo;
         private System.Windows.Forms.ToolStripMenuItem equipoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem nuevoEquipoToolStripMenuItem;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColEquipo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColDt;
+        private System.Windows.Forms.DataGridViewButtonColumn ColAccion;
     }
 }
 

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnVolver = new System.Windows.Forms.Button();
             this.lblTitulo = new System.Windows.Forms.Label();
             this.dgvJugadores = new System.Windows.Forms.DataGridView();
@@ -58,14 +59,25 @@
             // 
             // dgvJugadores
             // 
+            this.dgvJugadores.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
             this.dgvJugadores.AllowUserToAddRows = false;
             this.dgvJugadores.AllowUserToDeleteRows = false;
+            this.dgvJugadores.AllowUserToResizeColumns = false;
+            this.dgvJugadores.AllowUserToResizeRows = false;
             this.dgvJugadores.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvJugadores.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            this.dgvJugadores.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvJugadores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvJugadores.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ColEditar});
-            this.dgvJugadores.Location = new System.Drawing.Point(12, 58);
+            this.dgvJugadores.Location = new System.Drawing.Point(12, 62);
+            this.dgvJugadores.MultiSelect = false;
             this.dgvJugadores.Name = "dgvJugadores";
             this.dgvJugadores.ReadOnly = true;
             this.dgvJugadores.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -75,13 +87,13 @@
             // 
             // ColEditar
             // 
+            this.ColEditar.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.ColEditar.HeaderText = "Editar";
             this.ColEditar.Name = "ColEditar";
             this.ColEditar.ReadOnly = true;
-            this.ColEditar.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.ColEditar.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.ColEditar.Text = "Editar";
-            this.ColEditar.ToolTipText = "Editar";
+            this.ColEditar.UseColumnTextForButtonValue = true;
             // 
             // FrmListarJugadores
             // 

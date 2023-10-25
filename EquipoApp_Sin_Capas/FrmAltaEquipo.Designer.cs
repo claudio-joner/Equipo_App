@@ -42,8 +42,6 @@
             this.btnCrearEquipo = new System.Windows.Forms.Button();
             this.btnCancelarEquipo = new System.Windows.Forms.Button();
             this.lblCantidadJugadores = new System.Windows.Forms.Label();
-            this.lblFaltaDt = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.lblNombre = new System.Windows.Forms.Label();
             this.txtNombreEquipo = new System.Windows.Forms.TextBox();
             this.btnLimpiar = new System.Windows.Forms.Button();
@@ -84,6 +82,7 @@
             // 
             // cboDt
             // 
+            this.cboDt.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboDt.FormattingEnabled = true;
             this.cboDt.Location = new System.Drawing.Point(540, 78);
             this.cboDt.Name = "cboDt";
@@ -182,31 +181,11 @@
             // 
             this.lblCantidadJugadores.AutoSize = true;
             this.lblCantidadJugadores.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.lblCantidadJugadores.Location = new System.Drawing.Point(362, 574);
+            this.lblCantidadJugadores.Location = new System.Drawing.Point(348, 578);
             this.lblCantidadJugadores.Name = "lblCantidadJugadores";
             this.lblCantidadJugadores.Size = new System.Drawing.Size(159, 17);
             this.lblCantidadJugadores.TabIndex = 8;
             this.lblCantidadJugadores.Text = "Cantidad de Jugadores:";
-            // 
-            // lblFaltaDt
-            // 
-            this.lblFaltaDt.AutoSize = true;
-            this.lblFaltaDt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.lblFaltaDt.Location = new System.Drawing.Point(17, 342);
-            this.lblFaltaDt.Name = "lblFaltaDt";
-            this.lblFaltaDt.Size = new System.Drawing.Size(79, 17);
-            this.lblFaltaDt.TabIndex = 9;
-            this.lblFaltaDt.Text = "Mensaje Dt";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label1.Location = new System.Drawing.Point(17, 316);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(132, 17);
-            this.label1.TabIndex = 10;
-            this.label1.Text = "Mensaje Jugadores";
             // 
             // lblNombre
             // 
@@ -265,8 +244,6 @@
             this.Controls.Add(this.btnLimpiar);
             this.Controls.Add(this.txtNombreEquipo);
             this.Controls.Add(this.lblNombre);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.lblFaltaDt);
             this.Controls.Add(this.lblCantidadJugadores);
             this.Controls.Add(this.btnCancelarEquipo);
             this.Controls.Add(this.btnCrearEquipo);
@@ -294,8 +271,6 @@
         private System.Windows.Forms.Button btnCrearEquipo;
         private System.Windows.Forms.Button btnCancelarEquipo;
         private System.Windows.Forms.Label lblCantidadJugadores;
-        private System.Windows.Forms.Label lblFaltaDt;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblNombre;
         private System.Windows.Forms.TextBox txtNombreEquipo;
         private System.Windows.Forms.Button btnLimpiar;

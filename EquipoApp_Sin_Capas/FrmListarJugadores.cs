@@ -41,6 +41,7 @@ namespace EquipoApp
             dgvJugadores.DataSource = dt;
             //Ubicar la columna al final
             DataGridViewColumn columna = dgvJugadores.Columns["ColEditar"];
+            
             columna.DisplayIndex = 3 ;
 
             //Ocultar columnas
