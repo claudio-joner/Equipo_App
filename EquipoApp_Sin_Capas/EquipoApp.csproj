@@ -46,64 +46,64 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Equipo.cs" />
-    <Compile Include="FrmAltaJugador.cs">
+    <Compile Include="Entidades\Equipo.cs" />
+    <Compile Include="Forms\FrmAltaJugador.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmAltaJugador.Designer.cs">
+    <Compile Include="Forms\FrmAltaJugador.Designer.cs">
       <DependentUpon>FrmAltaJugador.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmAltaPersona.cs">
+    <Compile Include="Forms\FrmAltaPersona.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmAltaPersona.Designer.cs">
+    <Compile Include="Forms\FrmAltaPersona.Designer.cs">
       <DependentUpon>FrmAltaPersona.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmListarJugadores.cs">
+    <Compile Include="Forms\FrmListarJugadores.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmListarJugadores.Designer.cs">
+    <Compile Include="Forms\FrmListarJugadores.Designer.cs">
       <DependentUpon>FrmListarJugadores.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmListarPersonas.cs">
+    <Compile Include="Forms\FrmListarPersonas.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmListarPersonas.Designer.cs">
+    <Compile Include="Forms\FrmListarPersonas.Designer.cs">
       <DependentUpon>FrmListarPersonas.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmAltaEquipo.cs">
+    <Compile Include="Forms\FrmAltaEquipo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmAltaEquipo.Designer.cs">
+    <Compile Include="Forms\FrmAltaEquipo.Designer.cs">
       <DependentUpon>FrmAltaEquipo.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmPrincipal.cs">
+    <Compile Include="Forms\FrmPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmPrincipal.Designer.cs">
+    <Compile Include="Forms\FrmPrincipal.Designer.cs">
       <DependentUpon>FrmPrincipal.cs</DependentUpon>
     </Compile>
-    <Compile Include="Jugador.cs" />
-    <Compile Include="Persona.cs" />
-    <Compile Include="Posicion.cs" />
+    <Compile Include="Entidades\Jugador.cs" />
+    <Compile Include="Entidades\Persona.cs" />
+    <Compile Include="Entidades\Posicion.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="FrmAltaJugador.resx">
+    <EmbeddedResource Include="Forms\FrmAltaJugador.resx">
       <DependentUpon>FrmAltaJugador.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmAltaPersona.resx">
+    <EmbeddedResource Include="Forms\FrmAltaPersona.resx">
       <DependentUpon>FrmAltaPersona.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmListarJugadores.resx">
+    <EmbeddedResource Include="Forms\FrmListarJugadores.resx">
       <DependentUpon>FrmListarJugadores.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmListarPersonas.resx">
+    <EmbeddedResource Include="Forms\FrmListarPersonas.resx">
       <DependentUpon>FrmListarPersonas.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmAltaEquipo.resx">
+    <EmbeddedResource Include="Forms\FrmAltaEquipo.resx">
       <DependentUpon>FrmAltaEquipo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmPrincipal.resx">
+    <EmbeddedResource Include="Forms\FrmPrincipal.resx">
       <DependentUpon>FrmPrincipal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
