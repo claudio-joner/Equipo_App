@@ -1,0 +1,69 @@
+I:\Proyectos\C#\Equipo_App\EquipoApp\bin\Debug\EquipoApp.exe.config
+I:\Proyectos\C#\Equipo_App\EquipoApp\bin\Debug\EquipoApp.exe
+I:\Proyectos\C#\Equipo_App\EquipoApp\bin\Debug\EquipoApp.pdb
+I:\Proyectos\C#\Equipo_App\EquipoApp\obj\Debug\EquipoApp.csproj.AssemblyReference.cache
+I:\Proyectos\C#\Equipo_App\EquipoApp\obj\Debug\EquipoApp.Properties.Resources.resources
+I:\Proyectos\C#\Equipo_App\EquipoApp\obj\Debug\EquipoApp.csproj.GenerateResource.cache
+I:\Proyectos\C#\Equipo_App\EquipoApp\obj\Debug\EquipoApp.csproj.CoreCompileInputs.cache
+I:\Proyectos\C#\Equipo_App\EquipoApp\obj\Debug\EquipoApp.exe
+I:\Proyectos\C#\Equipo_App\EquipoApp\obj\Debug\EquipoApp.pdb
+I:\Proyectos\C#\Proyexto Entregable\Equipo_App\EquipoApp\bin\Debug\EquipoApp.exe.config
+I:\Proyectos\C#\Proyexto Entregable\Equipo_App\EquipoApp\bin\Debug\EquipoApp.exe
+I:\Proyectos\C#\Proyexto Entregable\Equipo_App\EquipoApp\bin\Debug\EquipoApp.pdb
+I:\Proyectos\C#\Proyexto Entregable\Equipo_App\EquipoApp\obj\Debug\EquipoApp.csproj.AssemblyReference.cache
+I:\Proyectos\C#\Proyexto Entregable\Equipo_App\EquipoApp\obj\Debug\EquipoApp.FrmAltaPersona.resources
+I:\Proyectos\C#\Proyexto Entregable\Equipo_App\EquipoApp\obj\Debug\EquipoApp.FrmPrincipal.resources
+I:\Proyectos\C#\Proyexto Entregable\Equipo_App\EquipoApp\obj\Debug\EquipoApp.Properties.Resources.resources
+I:\Proyectos\C#\Proyexto Entregable\Equipo_App\EquipoApp\obj\Debug\EquipoApp.csproj.GenerateResource.cache
+I:\Proyectos\C#\Proyexto Entregable\Equipo_App\EquipoApp\obj\Debug\EquipoApp.csproj.CoreCompileInputs.cache
+I:\Proyectos\C#\Proyexto Entregable\Equipo_App\EquipoApp\obj\Debug\EquipoApp.exe
+I:\Proyectos\C#\Proyexto Entregable\Equipo_App\EquipoApp\obj\Debug\EquipoApp.pdb
+I:\Proyectos\C#\Proyexto Entregable\Equipo_App\EquipoApp\obj\Debug\EquipoApp.FrmAltaJugador.resources
+I:\Proyectos\C#\Proyexto Entregable\Equipo_App\EquipoApp\obj\Debug\EquipoApp.FrmListarJugadores.resources
+I:\Proyectos\C#\Proyexto Entregable\Equipo_App\EquipoApp\obj\Debug\EquipoApp.FrmListarPersonas.resources
+I:\Proyectos\C#\Proyexto Entregable\Equipo_App\EquipoApp\obj\Debug\EquipoApp.FrmAltaEquipo.resources
+I:\Proyectos\C#\Proyexto Entregable\Equipo_App\EquipoApp_Sin_Capas\bin\Debug\EquipoApp.exe.config
+I:\Proyectos\C#\Proyexto Entregable\Equipo_App\EquipoApp_Sin_Capas\bin\Debug\EquipoApp.exe
+I:\Proyectos\C#\Proyexto Entregable\Equipo_App\EquipoApp_Sin_Capas\bin\Debug\EquipoApp.pdb
+I:\Proyectos\C#\Proyexto Entregable\Equipo_App\EquipoApp_Sin_Capas\obj\Debug\EquipoApp.csproj.AssemblyReference.cache
+I:\Proyectos\C#\Proyexto Entregable\Equipo_App\EquipoApp_Sin_Capas\obj\Debug\EquipoApp.FrmAltaJugador.resources
+I:\Proyectos\C#\Proyexto Entregable\Equipo_App\EquipoApp_Sin_Capas\obj\Debug\EquipoApp.FrmAltaPersona.resources
+I:\Proyectos\C#\Proyexto Entregable\Equipo_App\EquipoApp_Sin_Capas\obj\Debug\EquipoApp.FrmListarJugadores.resources
+I:\Proyectos\C#\Proyexto Entregable\Equipo_App\EquipoApp_Sin_Capas\obj\Debug\EquipoApp.FrmListarPersonas.resources
+I:\Proyectos\C#\Proyexto Entregable\Equipo_App\EquipoApp_Sin_Capas\obj\Debug\EquipoApp.FrmAltaEquipo.resources
+I:\Proyectos\C#\Proyexto Entregable\Equipo_App\EquipoApp_Sin_Capas\obj\Debug\EquipoApp.FrmPrincipal.resources
+I:\Proyectos\C#\Proyexto Entregable\Equipo_App\EquipoApp_Sin_Capas\obj\Debug\EquipoApp.Properties.Resources.resources
+I:\Proyectos\C#\Proyexto Entregable\Equipo_App\EquipoApp_Sin_Capas\obj\Debug\EquipoApp.csproj.GenerateResource.cache
+I:\Proyectos\C#\Proyexto Entregable\Equipo_App\EquipoApp_Sin_Capas\obj\Debug\EquipoApp.csproj.CoreCompileInputs.cache
+I:\Proyectos\C#\Proyexto Entregable\Equipo_App\EquipoApp_Sin_Capas\obj\Debug\EquipoApp.exe
+I:\Proyectos\C#\Proyexto Entregable\Equipo_App\EquipoApp_Sin_Capas\obj\Debug\EquipoApp.pdb
+C:\Users\claud\OneDrive\Escritorio\Proyectos\C#\Proyecto entregable\Equipo_App\Equipo_App\EquipoApp_Sin_Capas\bin\Debug\EquipoApp.exe.config
+C:\Users\claud\OneDrive\Escritorio\Proyectos\C#\Proyecto entregable\Equipo_App\Equipo_App\EquipoApp_Sin_Capas\bin\Debug\EquipoApp.exe
+C:\Users\claud\OneDrive\Escritorio\Proyectos\C#\Proyecto entregable\Equipo_App\Equipo_App\EquipoApp_Sin_Capas\bin\Debug\EquipoApp.pdb
+C:\Users\claud\OneDrive\Escritorio\Proyectos\C#\Proyecto entregable\Equipo_App\Equipo_App\EquipoApp_Sin_Capas\obj\Debug\EquipoApp.csproj.AssemblyReference.cache
+C:\Users\claud\OneDrive\Escritorio\Proyectos\C#\Proyecto entregable\Equipo_App\Equipo_App\EquipoApp_Sin_Capas\obj\Debug\EquipoApp.FrmAltaJugador.resources
+C:\Users\claud\OneDrive\Escritorio\Proyectos\C#\Proyecto entregable\Equipo_App\Equipo_App\EquipoApp_Sin_Capas\obj\Debug\EquipoApp.FrmAltaPersona.resources
+C:\Users\claud\OneDrive\Escritorio\Proyectos\C#\Proyecto entregable\Equipo_App\Equipo_App\EquipoApp_Sin_Capas\obj\Debug\EquipoApp.FrmListarJugadores.resources
+C:\Users\claud\OneDrive\Escritorio\Proyectos\C#\Proyecto entregable\Equipo_App\Equipo_App\EquipoApp_Sin_Capas\obj\Debug\EquipoApp.FrmListarPersonas.resources
+C:\Users\claud\OneDrive\Escritorio\Proyectos\C#\Proyecto entregable\Equipo_App\Equipo_App\EquipoApp_Sin_Capas\obj\Debug\EquipoApp.FrmAltaEquipo.resources
+C:\Users\claud\OneDrive\Escritorio\Proyectos\C#\Proyecto entregable\Equipo_App\Equipo_App\EquipoApp_Sin_Capas\obj\Debug\EquipoApp.FrmPrincipal.resources
+C:\Users\claud\OneDrive\Escritorio\Proyectos\C#\Proyecto entregable\Equipo_App\Equipo_App\EquipoApp_Sin_Capas\obj\Debug\EquipoApp.Properties.Resources.resources
+C:\Users\claud\OneDrive\Escritorio\Proyectos\C#\Proyecto entregable\Equipo_App\Equipo_App\EquipoApp_Sin_Capas\obj\Debug\EquipoApp.csproj.GenerateResource.cache
+C:\Users\claud\OneDrive\Escritorio\Proyectos\C#\Proyecto entregable\Equipo_App\Equipo_App\EquipoApp_Sin_Capas\obj\Debug\EquipoApp.csproj.CoreCompileInputs.cache
+C:\Users\claud\OneDrive\Escritorio\Proyectos\C#\Proyecto entregable\Equipo_App\Equipo_App\EquipoApp_Sin_Capas\obj\Debug\EquipoApp.exe
+C:\Users\claud\OneDrive\Escritorio\Proyectos\C#\Proyecto entregable\Equipo_App\Equipo_App\EquipoApp_Sin_Capas\obj\Debug\EquipoApp.pdb
+I:\Proyectos\C#\Proyexto Entregable\Equipo_App\2da Entrega\EquipoApp_Con_Transacciones\bin\Debug\EquipoApp.exe.config
+I:\Proyectos\C#\Proyexto Entregable\Equipo_App\2da Entrega\EquipoApp_Con_Transacciones\bin\Debug\EquipoApp.exe
+I:\Proyectos\C#\Proyexto Entregable\Equipo_App\2da Entrega\EquipoApp_Con_Transacciones\bin\Debug\EquipoApp.pdb
+I:\Proyectos\C#\Proyexto Entregable\Equipo_App\2da Entrega\EquipoApp_Con_Transacciones\obj\Debug\EquipoApp.csproj.AssemblyReference.cache
+I:\Proyectos\C#\Proyexto Entregable\Equipo_App\2da Entrega\EquipoApp_Con_Transacciones\obj\Debug\EquipoApp.FrmAltaJugador.resources
+I:\Proyectos\C#\Proyexto Entregable\Equipo_App\2da Entrega\EquipoApp_Con_Transacciones\obj\Debug\EquipoApp.FrmAltaPersona.resources
+I:\Proyectos\C#\Proyexto Entregable\Equipo_App\2da Entrega\EquipoApp_Con_Transacciones\obj\Debug\EquipoApp.FrmListarJugadores.resources
+I:\Proyectos\C#\Proyexto Entregable\Equipo_App\2da Entrega\EquipoApp_Con_Transacciones\obj\Debug\EquipoApp.FrmListarPersonas.resources
+I:\Proyectos\C#\Proyexto Entregable\Equipo_App\2da Entrega\EquipoApp_Con_Transacciones\obj\Debug\EquipoApp.FrmAltaEquipo.resources
+I:\Proyectos\C#\Proyexto Entregable\Equipo_App\2da Entrega\EquipoApp_Con_Transacciones\obj\Debug\EquipoApp.FrmPrincipal.resources
+I:\Proyectos\C#\Proyexto Entregable\Equipo_App\2da Entrega\EquipoApp_Con_Transacciones\obj\Debug\EquipoApp.Properties.Resources.resources
+I:\Proyectos\C#\Proyexto Entregable\Equipo_App\2da Entrega\EquipoApp_Con_Transacciones\obj\Debug\EquipoApp.csproj.GenerateResource.cache
+I:\Proyectos\C#\Proyexto Entregable\Equipo_App\2da Entrega\EquipoApp_Con_Transacciones\obj\Debug\EquipoApp.csproj.CoreCompileInputs.cache
+I:\Proyectos\C#\Proyexto Entregable\Equipo_App\2da Entrega\EquipoApp_Con_Transacciones\obj\Debug\EquipoApp.exe
+I:\Proyectos\C#\Proyexto Entregable\Equipo_App\2da Entrega\EquipoApp_Con_Transacciones\obj\Debug\EquipoApp.pdb
