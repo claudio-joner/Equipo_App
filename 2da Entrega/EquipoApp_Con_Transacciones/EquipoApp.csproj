@@ -79,10 +79,10 @@
     <Compile Include="Forms\Formularios\Equipo\FrmAltaEquipo.Designer.cs">
       <DependentUpon>FrmAltaEquipo.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\FrmPrincipal.cs">
+    <Compile Include="Forms\Formularios\FrmPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\FrmPrincipal.Designer.cs">
+    <Compile Include="Forms\Formularios\FrmPrincipal.Designer.cs">
       <DependentUpon>FrmPrincipal.cs</DependentUpon>
     </Compile>
     <Compile Include="Entidades\Jugador.cs" />
@@ -105,7 +105,7 @@
     <EmbeddedResource Include="Forms\Formularios\Equipo\FrmAltaEquipo.resx">
       <DependentUpon>FrmAltaEquipo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\FrmPrincipal.resx">
+    <EmbeddedResource Include="Forms\Formularios\FrmPrincipal.resx">
       <DependentUpon>FrmPrincipal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">

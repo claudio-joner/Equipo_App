@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using EquipoApp.Datos;
 
 namespace EquipoApp
 {
@@ -19,8 +20,10 @@ namespace EquipoApp
         public FrmListarJugadores()
         {
             InitializeComponent();
-            conexion = new SqlConnection(Properties.Resources.cadenaConexionPcCasa);
+            //conexion = new SqlConnection(Properties.Resources.cadenaConexionPcCasa);
+            conexion = new SqlConnection(Properties.Resources.cadenaConexionPcCas);
             comando = new SqlCommand();
+
         }
 
         private void btnVolver_Click(object sender, EventArgs e)
@@ -30,13 +33,13 @@ namespace EquipoApp
 
         private void FrmListarJugadores_Load(object sender, EventArgs e)
         {
-            AbrirConexion();
+            conexion.Open();
             DataTable dt = new DataTable();
             dt.Clear();
             comando.Connection = conexion;
             comando.CommandText = "SP_LISTAR_JUGADORES";
             dt.Load(comando.ExecuteReader());
-            CerraConexion();
+            conexion.Close();
 
             dgvJugadores.DataSource = dt;
             //Ubicar la columna al final
@@ -58,16 +61,6 @@ namespace EquipoApp
             //}
 
 
-        }
-
-        private void CerraConexion()
-        {
-            conexion.Close();
-        }
-
-        private void AbrirConexion()
-        {
-            conexion.Open();
         }
 
         private void dgvJugadores_CellContentClick(object sender, DataGridViewCellEventArgs e)

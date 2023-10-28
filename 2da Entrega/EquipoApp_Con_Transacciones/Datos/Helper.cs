@@ -14,9 +14,12 @@ namespace EquipoApp.Datos
         SqlConnection conexion;
         SqlCommand comando;
 
+
+
         public Helper()
         {
-            conexion = new SqlConnection(Properties.Resources.cadenaConexionPcCasa);
+            //conexion = new SqlConnection(Properties.Resources.cadenaConexionPcCasa);
+            conexion = new SqlConnection(Properties.Resources.cadenaConexionPcCas);
             comando = new SqlCommand();
         }
 
@@ -41,5 +44,6 @@ namespace EquipoApp.Datos
             CerrarConexion();
             return dt;
         }
+
     }
 }

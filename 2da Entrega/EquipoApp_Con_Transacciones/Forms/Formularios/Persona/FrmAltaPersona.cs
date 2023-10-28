@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
 using System.Windows.Forms;
+using EquipoApp.Datos;
 
 namespace EquipoApp
 {
@@ -17,12 +18,15 @@ namespace EquipoApp
         SqlConnection conexion;
         SqlCommand comando;
         SqlDataReader lector;
+        
         public FrmAltaPersona()
         {
             InitializeComponent();
             nuevaPersona = new Persona();
-            conexion = new SqlConnection(Properties.Resources.cadenaConexionPcCasa);
+            //conexion = new SqlConnection(Properties.Resources.cadenaConexionPcCasa);
+            conexion = new SqlConnection(Properties.Resources.cadenaConexionPcCas);
             comando = new SqlCommand();
+
         }
 
         private void FrmAltaPersona_Load(object sender, EventArgs e)
@@ -68,7 +72,7 @@ namespace EquipoApp
 
         private bool ConsultarPersona()
         {
-            AbrirConexion();
+            conexion.Open();
             //Comando
             comando.Connection = conexion;
             comando.CommandText = "SP_CONSULTAR_PERSONAS";
@@ -80,12 +84,12 @@ namespace EquipoApp
             lector = comando.ExecuteReader();
             if (!lector.HasRows)
             {
-                CerrarConexon();
+                conexion.Close();
                 return false;
             }
             else
             {
-                CerrarConexon();
+                conexion.Close();
                 return true;
             }   
            
@@ -106,13 +110,16 @@ namespace EquipoApp
 
         private void btnAceptarNuevaPers_Click(object sender, EventArgs e)
         {
+            SqlTransaction transaccion = null;
             try
             {
                 if (Validar())
                 {
-                    AbrirConexion();
+                    conexion.Open();
+                    transaccion = conexion.BeginTransaction();//Indico la transaccion a que conexion empieza
                     //Comando
                     comando.Connection = conexion;
+                    comando.Transaction = transaccion; //Indico que comando tiene transaccion
                     comando.CommandText = "SP_INSERTAR_PERSONAS";
                     comando.CommandType = CommandType.StoredProcedure;
                     comando.Parameters.Clear();
@@ -121,32 +128,32 @@ namespace EquipoApp
                     comando.Parameters.AddWithValue("@fecha_nac",dtpFechaNac.Value);
                     int nroLineasAfectada = (int)comando.ExecuteNonQuery();
 
-                    CerrarConexon();
-
+                    //gestor.CerrarConexion();
                     MessageBox.Show("Se agrego con exito.");
+
+                    transaccion.Commit(); //Hago el commit
                     this.Close();
+                    
                 }
                 else
                 {
                     MessageBox.Show("No Validado");
+                    transaccion.Rollback();
+
                 }
             }
             catch (Exception)
             {
-
-                throw;
+                if(transaccion == null)
+                    transaccion.Rollback();
+            }
+            finally
+            {
+                if (conexion != null && conexion.State == ConnectionState.Open)
+                    conexion.Close();
             }
         }
 
-        private void CerrarConexon()
-        {
-            conexion.Close();
-        }
-
-        private void AbrirConexion()
-        {
-            conexion.ConnectionString = Properties.Resources.cadenaConexionPcCasa;//Tambien se puede colocar en el constructor.
-            conexion.Open();
-        }
+        
     }
 }

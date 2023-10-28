@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using EquipoApp.Datos;
 
 namespace EquipoApp
 {
@@ -15,26 +16,28 @@ namespace EquipoApp
     {
         SqlConnection conexion;
         SqlCommand comando;
-        
+        Helper gestor;
+
+
         public FrmPrincipal()
         {
             InitializeComponent();
             conexion = new SqlConnection(Properties.Resources.cadenaConexionPcCasa);
             comando = new SqlCommand();
+             gestor = new Helper();
         }
 
         private void FrmPrincipal_Load(object sender, EventArgs e)
         {
             
-            AbrirConexion();
-            DataTable dt = new DataTable();
-            dt.Clear();
-            comando.Connection = conexion;
-            comando.CommandText = "SP_LISTAR_EQUIPOS";
-            dt.Load(comando.ExecuteReader());//cargo el datatable 
-            CerraConexion();
+            //AbrirConexion();
+            //DataTable dt = new DataTable();
+            //dt.Clear();
+            //comando.Connection = conexion;
+            //comando.CommandText = "SP_LISTAR_EQUIPOS";
+            //dt.Load(comando.ExecuteReader());//cargo el datatable 
+            //CerraConexion();
 
-            
             //Creo las columnas de manera manual
             DataGridViewColumn colId = dgvEquipos.Columns["ColId"];
             colId.DisplayIndex = 0;
@@ -45,7 +48,7 @@ namespace EquipoApp
             DataGridViewColumn colAccion = dgvEquipos.Columns["ColAccion"];
             colAccion.DisplayIndex = 3;
 
-            foreach (DataRowView row in dt.DefaultView)
+            foreach (DataRowView row in gestor.CargarCombos("SP_LISTAR_EQUIPOS").DefaultView)
             {
                 int id = Convert.ToInt32(row.Row.ItemArray[0].ToString());
                 string nom = row.Row.ItemArray[1].ToString();
@@ -96,6 +99,7 @@ namespace EquipoApp
         {
             FrmAltaEquipo frmNuevoEquipo = new FrmAltaEquipo();
             frmNuevoEquipo.ShowDialog();
+            
         }
 
         private void listarEquiposToolStripMenuItem_Click(object sender, EventArgs e)

@@ -9,21 +9,24 @@ using System.Threading.Tasks;
 using System.Data.SqlClient;
 using System.Windows.Forms;
 using System.Runtime.InteropServices.WindowsRuntime;
+using EquipoApp.Datos;
 
 namespace EquipoApp
 {
     public partial class FrmAltaJugador : Form
     {
+       Helper gestor;
+       SqlCommand comando;
         SqlConnection conexion;
-        SqlCommand comando;
         
         public FrmAltaJugador()
         {
             InitializeComponent();
-            conexion = new SqlConnection(Properties.Resources.cadenaConexionPcCasa);
-            comando = new SqlCommand();
+            gestor = new Helper();
             //Creamos un jugador
             Jugador jugador = new Jugador();
+            comando = new SqlCommand();
+            conexion = new SqlConnection(Properties.Resources.cadenaConexionPcCas);
             
         }
 
@@ -34,32 +37,16 @@ namespace EquipoApp
 
         private void FrmAltaJugador_Load(object sender, EventArgs e)
         {
-            AbrirConexion();
+           
             CargarComboPersonas();
             CargarComboPosiciones();
-            CerrarConexion();
+
             Limpiar();
-        }
-
-        private void CerrarConexion()
-        {
-            conexion.Close();
-        }
-
-        private void AbrirConexion()
-        {
-            conexion.Open();
         }
 
         private void CargarComboPosiciones()
         {
-            DataTable tablaPosicion = new DataTable();
-            comando.Connection = conexion;
-            comando.CommandText = "SP_LISTAR_POSICIONES";
-            comando.CommandType = CommandType.StoredProcedure;
-            tablaPosicion.Load(comando.ExecuteReader());
-
-            cboPosicion.DataSource = tablaPosicion;
+            cboPosicion.DataSource = gestor.CargarCombos("SP_LISTAR_POSICIONES");
             cboPosicion.DisplayMember = "NOMBRE_POSICION";
             cboPosicion.ValueMember = "ID";
 
@@ -67,15 +54,15 @@ namespace EquipoApp
 
         private void CargarComboPersonas()
         {
-            DataTable tablaPersonas = new DataTable();
+            //DataTable tablaPersonas = new DataTable();
 
-            comando.Connection = conexion;
-            comando.CommandText = "SP_LISTAR_PERSONAS";//Nombre sp
-            comando.CommandType = CommandType.StoredProcedure;
+            //comando.Connection = conexion;
+            //comando.CommandText = "SP_LISTAR_PERSONAS";//Nombre sp
+            //comando.CommandType = CommandType.StoredProcedure;
 
-            tablaPersonas.Load(comando.ExecuteReader());//Cargo los datos con la tabla
+            //tablaPersonas.Load(comando.ExecuteReader());//Cargo los datos con la tabla
             
-            cboPersonas.DataSource = tablaPersonas;
+            cboPersonas.DataSource = gestor.CargarCombos("SP_LISTAR_PERSONAS"); ;
             cboPersonas.DisplayMember = "NOMBRE";
             cboPersonas.ValueMember = "ID";
 
@@ -91,28 +78,34 @@ namespace EquipoApp
 
         private void btnAceptarNuevoJug_Click(object sender, EventArgs e)
         {
+            SqlTransaction t = null ;
             try
             {
                 if (Validar())
                 {
-                    AbrirConexion();
-                    comando.Connection = conexion;
-                    comando.CommandText = "SP_INSERTAR_JUGADORES";
-                    comando.CommandType = CommandType.StoredProcedure;
-                    comando.Parameters.Clear();
-                    comando.Parameters.AddWithValue("@persona",(int)cboPersonas.SelectedValue);//Obtengo el ValueMember
-                    comando.Parameters.AddWithValue("@camiseta",Convert.ToInt32(txtNroCamiseta.Text));
-                    comando.Parameters.AddWithValue("@posicion",cboPosicion.SelectedValue);
+                    conexion.Open();
+                    t = conexion.BeginTransaction();
+                    SqlCommand cmd = new SqlCommand("SP_INSERTAR_JUGADORES", conexion, t);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.Clear();
+                    cmd.Parameters.AddWithValue("@persona",(int)cboPersonas.SelectedValue);//Obtengo el ValueMember
+                    cmd.Parameters.AddWithValue("@camiseta",Convert.ToInt32(txtNroCamiseta.Text));
+                    cmd.Parameters.AddWithValue("@posicion",cboPosicion.SelectedValue);
 
-                    comando.ExecuteNonQuery();
-                    CerrarConexion();
+                    cmd.ExecuteNonQuery();
                     MessageBox.Show("Se agrego con éxito");
+                    t.Commit();
                 }
             }
             catch (Exception)
             {
-
-                throw;
+                if (t == null)
+                    t.Rollback();
+            }
+            finally
+            {
+                if (conexion != null && conexion.State == ConnectionState.Open)
+                    gestor.CerrarConexion();
             }
 
         }
