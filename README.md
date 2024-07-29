@@ -9,7 +9,7 @@ Se presenta la siguiente situación:
 ● Una misma persona puede jugar en más de un equipo
 
 ● Dentro de un equipo una persona no puede cubrir dos posiciones
-diferentes.
+diferentes
 
 #
  
